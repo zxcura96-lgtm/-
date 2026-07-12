@@ -21,7 +21,12 @@ for i in ydata.findall("y"):
 bottom = min(y)
 
 plt.plot(x, y)
-plt.fill_between(x, y, bottom, alpha=0.6)
-
-plt.grid()
-plt.show()
+print('Закрасить область под графиком? ДА - 1; НЕТ - 0')
+t=int(input())
+if t == 1:
+    plt.fill_between(x, y, bottom, alpha=0.6)
+    plt.grid()
+    plt.show()
+else:
+    plt.grid()
+    plt.show()
