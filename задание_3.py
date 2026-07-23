@@ -1,5 +1,6 @@
 import xml.etree.ElementTree as ET
 import matplotlib.pyplot as plt
+import sys
 
 x = []
 y = []
@@ -19,14 +20,11 @@ for i in ydata.findall("y"):
     y.append(float(i.text))
 
 bottom = min(y)
-
+plt.xlabel("Ось x")
+plt.ylabel('Ось y')
 plt.plot(x, y)
-print('Закрасить область под графиком? ДА - 1; НЕТ - 0')
-t=int(input())
-if t == 1:
+if len(sys.argv) > 1 and sys.argv[1] == "yes":
     plt.fill_between(x, y, bottom, alpha=0.6)
-    plt.grid()
-    plt.show()
-else:
-    plt.grid()
-    plt.show()
+
+plt.grid()
+plt.show()
