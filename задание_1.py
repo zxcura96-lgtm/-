@@ -14,6 +14,9 @@ for i in np.arange(0,1.01,0.02):
     y.append(((6*i -2)**2)* np.sin(12*i - 4))
     z.append(str(i) + '  ' + str(y1))
 plt.plot(x, y)
+plt.xlabel("Ось x")
+plt.ylabel('Ось y')
+plt.grid()
 plt.show()
 
 
