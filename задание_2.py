@@ -25,20 +25,24 @@ fig = plt.figure(figsize=(10, 6))
 
 ax1 = fig.add_subplot(2, 2, 1, projection='3d')
 ax1.plot_surface(X1, X2, Z,  cmap='viridis')
+ax1.scatter(x10, x20, z0, color='red', s=50)
 
 
 ax2 = fig.add_subplot(2, 2, 2)
 contour = ax2.contour(X1, X2, Z, levels=30)
+ax2.scatter(x10, x20, color='red', s=50)
 ax2.grid()
 
 ax3 = fig.add_subplot(2, 2, 3)
 Y1 = f(x1, x20)
 ax3.plot(x1, Y1)
+ax3.scatter(x10, z0, color='red', s=50)
 ax3.grid()
 
 ax4 = fig.add_subplot(2, 2, 4)
 Y2 = f(x10, x2)
 ax4.plot(x2, Y2)
+ax4.scatter(x20, z0, color='red', s=50)
 ax4.grid()
 
 
